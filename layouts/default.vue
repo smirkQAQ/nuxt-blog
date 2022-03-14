@@ -1,13 +1,14 @@
 <template>
   <transition name='index'>
-    <div class="view-container md: lg: xl: 2xl:">
-      <header>
+    <!-- md:>768 lg>1024 -->
+    <div class="box-border mx-auto h-screen view-container md:max-w-3xl lg:max-w-5xl">
+      <header class="header w-full">
         <Header></Header>
       </header>
-      <main>
+      <main class="main">
         <nuxt />
       </main>
-      <footer>
+      <footer class="footer">
         <Footer></Footer>
       </footer>
     </div>
@@ -29,8 +30,17 @@ export default {
 <style scoped>
   .view-container {
     position: relative;
-    margin: 0 auto;
     width: 100%;
+    padding: 0 2px;
+  }
+  .header {
+    
+  }
+  .main {
+    padding-top: 50px;
+  }
+  .footer {
+
   }
   .index-enter-active, .index-leave-active {
     transition: opacity 0.2s
