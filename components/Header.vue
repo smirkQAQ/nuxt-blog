@@ -1,16 +1,16 @@
 <template>
   <div>
-    main
+    header
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'Header',
 
 }
 </script>
 
-<style scoped>
-    
+<style>
+
 </style>

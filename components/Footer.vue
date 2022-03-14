@@ -1,16 +1,17 @@
 <template>
   <div>
-    main
+    foot
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'Footer',
+
 
 }
 </script>
 
-<style scoped>
-    
+<style>
+
 </style>

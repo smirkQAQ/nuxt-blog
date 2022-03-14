@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'nuxt-blog',
     htmlAttrs: {
-      lang: 'zn-CH'
+      lang: 'zh'
     },
     meta: [
       { charset: 'utf-8' },

@@ -1,0 +1,41 @@
+<template>
+  <transition name='index'>
+    <div class="view-container md: lg: xl: 2xl:">
+      <header>
+        <Header></Header>
+      </header>
+      <main>
+        <nuxt />
+      </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
+    </div>
+  </transition>
+</template>
+
+<script>
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+export default {
+  name: 'Container',
+  components: {
+    Header,
+    Footer
+  }
+}
+</script>
+
+<style scoped>
+  .view-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .index-enter-active, .index-leave-active {
+    transition: opacity 0.2s
+  }
+  .index-enter, .index-leave-active {
+    opacity: 0
+  }
+</style>

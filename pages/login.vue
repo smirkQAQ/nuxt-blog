@@ -1,16 +1,16 @@
 <template>
   <div>
-    main
+    login
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'Login',
 
 }
 </script>
 
-<style scoped>
-    
+<style>
+
 </style>
