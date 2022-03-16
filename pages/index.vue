@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     main
   </div>
 </template>
@@ -12,5 +12,8 @@ export default {
 </script>
 
 <style scoped>
-    
+  .main {
+    min-height: calc(100vh - 50px);
+    margin-top: 50px;
+  }
 </style>

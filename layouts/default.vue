@@ -2,13 +2,13 @@
   <transition name='index'>
     <!-- md:>768 lg>1024 -->
     <div class="box-border mx-auto h-screen view-container md:max-w-3xl lg:max-w-5xl">
-      <header class="header w-full">
+      <header class="w-full">
         <Header></Header>
       </header>
-      <main class="main">
+      <main>
         <nuxt />
       </main>
-      <footer class="footer">
+      <footer>
         <Footer></Footer>
       </footer>
     </div>
@@ -31,16 +31,6 @@ export default {
   .view-container {
     position: relative;
     width: 100%;
-    padding: 0 2px;
-  }
-  .header {
-    
-  }
-  .main {
-    padding-top: 50px;
-  }
-  .footer {
-
   }
   .index-enter-active, .index-leave-active {
     transition: opacity 0.2s

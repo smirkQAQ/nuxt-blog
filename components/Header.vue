@@ -1,18 +1,44 @@
 <template>
   <div>
-    <div class="w-full header">
+    <div class="w-full header" :class="{active: isActive}">
       <div class="content">
 
       </div>
     </div>
-    <div class="header--bottom opacity-0 md:opacity-100"></div>
+    <div class="md:header--bottom opacity-0 md:opacity-100"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Header',
-
+  data() {
+    return {
+      searchValue: "",
+      isActive: false,
+      oldScrollTop: 0
+    }
+  },
+  mounted() {
+    // 监听页面滚动事件
+    window.addEventListener('scroll', this.appScroll)
+  },
+  methods: {
+    appScroll() {
+      // 浏览器兼容
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let scrollStep = scrollTop - this.oldScrollTop;
+      this.oldScrollTop = scrollTop;
+      if(scrollStep > 0) {
+        this.isActive = true
+      } else {
+        this.isActive = false
+      }
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.appScroll)
+  }
 }
 </script>
 
@@ -21,7 +47,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  height: 40px;
+  height: 50px;
   display: -webkit-flex;
   display: flex;
   justify-content: center;
@@ -29,9 +55,12 @@ export default {
   z-index: 10;
   background-color: var(--blog-green);
 }
+.active {
+  top: -50px !important;
+}
 .header--bottom {
   position: fixed;
-  top: 40px;
+  top: 50px;
   left: 0;
   z-index: 10;
   width: 300%;
