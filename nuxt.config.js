@@ -11,6 +11,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -35,6 +38,10 @@ export default {
     {
       src: '@/plugins/axios',
       ssr: true
+    },
+    {
+      src: '@/plugins/route', 
+      ssr: false
     }
   ],
 

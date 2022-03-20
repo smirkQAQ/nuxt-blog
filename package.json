@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "pstart": "NODE_ENV=production pm2 start pm2.config.json"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",

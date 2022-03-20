@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   // 使得 Tailwind 可以在生产构建中对未使用的样式进行摇树优化。
   purge: [
     './components/**/*.{vue,js}',

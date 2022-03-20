@@ -1,0 +1,16 @@
+{
+  "apps": {
+    "name": "nuxt-blog",
+    "script": "npx nuxt start", 
+    "watch": true, 
+    "ignore_watch": [
+      "node_modules",
+      "logs"
+    ],
+    "autorestart": true,
+    "instances": 1,
+    "error_file": "logs/err.log",
+    "out_file": "logs/out.log",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss"
+  }
+}

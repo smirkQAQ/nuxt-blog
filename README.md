@@ -10,8 +10,13 @@ $ npm install
 $ npm run dev
 
 # build for production and launch server
+// 开发环境打包
 $ npm run build
+.nuxt、 static、package.json、 nuxt.config.js、pm2.config.json 五个文件放到服务器
+$ npm install -production
 $ npm run start
+PM2 运行
+$ npm run pstart
 
 # generate static project
 $ npm run generate

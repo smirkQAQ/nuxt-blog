@@ -1,15 +1,20 @@
 <template>
   <div>
-    <div class="w-full header" :class="{active: isActive}">
-      <div class="content">
-
+    <div class="flex justify-center w-full header content px-3" :class="{ active: isActive }">
+      <div class="flex w-full items-center md:max-w-3xl lg:max-w-5xl">
+        <a-icon class="p-2 pb-2.5 text-md text-black md:hidden" type="unordered-list" />
+        <span class="flex-1 text-2xl text-center md:text-left font-bold pointer" style="color: var(--blog-text-color)">小菜鸡</span>
+        
+        <a-input-search class="hidden md:block" placeholder="input search text" style="width: 200px" @search="onSearch" />
+        <a-icon class="p-2 pb-2.5 text-md text-black md:hidden" type="search" />
       </div>
     </div>
-    <div class="md:header--bottom opacity-0 md:opacity-100"></div>
+    <div class="md:header--bottom hidden md:block"></div>
   </div>
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
 export default {
   name: 'Header',
   data() {
@@ -19,11 +24,17 @@ export default {
       oldScrollTop: 0
     }
   },
+  computed: {
+    ...mapState(['meunIndex'])
+  },
   mounted() {
     // 监听页面滚动事件
     window.addEventListener('scroll', this.appScroll)
   },
   methods: {
+    onSearch(value) {
+      console.log(value);
+    },
     appScroll() {
       // 浏览器兼容
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
@@ -49,8 +60,6 @@ export default {
   left: 0;
   height: 50px;
   display: -webkit-flex;
-  display: flex;
-  justify-content: center;
   transition: all .5s;
   z-index: 10;
   background-color: var(--blog-green);
