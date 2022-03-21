@@ -17,6 +17,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import { mapState } from 'vuex'
 export default {
   name: 'Container',
   components: {
@@ -26,10 +27,26 @@ export default {
   data() {
     return {
       scrollTop: 0,
-      isToTop: true,
+      oldScrollTop: 0
     }
   },
+
+  computed: {
+    ...mapState(['isToTop'])
+  },
+
+  mounted() {
+    // 监听页面滚动事件
+    window.addEventListener('scroll', this.appScroll)
+  },
+  
   methods: {
+    appScroll() {
+      // 浏览器兼容
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      this.$store.commit('SET_HEADER_STATUS', scrollTop)
+    },
+
     backTop() {
       // 加计时器是为了过渡顺滑
       let timer = setInterval(() => {
@@ -40,7 +57,11 @@ export default {
         }
       }, 16);
     },
-  }
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.appScroll)
+  },
 }
 </script>
 
@@ -75,5 +96,14 @@ export default {
   }
   .up_hiddent-leave-active {
     animation: up_hiddent .5s ;
+  }
+  @keyframes up_hiddent{
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      bottom: 150px;
+    }
   }
 </style>

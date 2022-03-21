@@ -1,12 +1,12 @@
 <template>
   <header>
-    <div class="flex justify-center w-full header content px-3" :class="{ active: isActive }">
+    <div class="flex justify-center w-full header content px-3" :class="{ active: headerStatus }">
       <div class="flex w-full items-center md:max-w-3xl lg:max-w-5xl">
-        <a-icon class="p-2 pb-2.5 text-md text-black md:hidden" type="unordered-list" />
+        <a-icon class="p-2 text-md text-black md:hidden" type="unordered-list" />
         <span class="flex-1 text-2xl text-center md:text-left font-bold pointer" style="color: var(--blog-text-color)">小菜鸡</span>
         
         <a-input-search class="hidden md:block" placeholder="input search text" style="width: 200px" @search="onSearch" />
-        <a-icon class="p-2 pb-2.5 text-md text-black md:hidden" type="search" />
+        <a-icon class="p-2 text-md text-black md:hidden" type="search" />
       </div>
     </div>
     <div class="md:header--bottom hidden md:block"></div>
@@ -20,36 +20,17 @@ export default {
   data() {
     return {
       searchValue: "",
-      isActive: false,
-      oldScrollTop: 0
     }
   },
   computed: {
-    ...mapState(['meunIndex'])
+    ...mapState(['meunIndex', 'headerStatus'])
   },
-  mounted() {
-    // 监听页面滚动事件
-    window.addEventListener('scroll', this.appScroll)
-  },
+  
   methods: {
     onSearch(value) {
       console.log(value);
     },
-    appScroll() {
-      // 浏览器兼容
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      let scrollStep = scrollTop - this.oldScrollTop;
-      this.oldScrollTop = scrollTop;
-      if(scrollStep > 0) {
-        this.isActive = true
-      } else {
-        this.isActive = false
-      }
-    }
   },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.appScroll)
-  }
 }
 </script>
 
