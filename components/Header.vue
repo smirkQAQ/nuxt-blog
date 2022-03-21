@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <div class="flex justify-center w-full header content px-3" :class="{ active: isActive }">
       <div class="flex w-full items-center md:max-w-3xl lg:max-w-5xl">
         <a-icon class="p-2 pb-2.5 text-md text-black md:hidden" type="unordered-list" />
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="md:header--bottom hidden md:block"></div>
-  </div>
+  </header>
 </template>
 
 <script>

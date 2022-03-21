@@ -1,5 +1,5 @@
 <template>
-  <div class="footer w-full">
+  <footer class="footer w-full">
     <div>由 Vue+Node+Antd Design 强力驱动</div>
     <div class="flex leading-none">
       <div class="flex px-1 py-0.5 text-white rounded-md" style="background-color: #ff6a00">
@@ -18,7 +18,7 @@
       </span>本博客已萌萌哒运行了
     </div>
     <span>{{ dateValue }}</span>
-  </div>
+  </footer>
 </template>
 
 <script>
