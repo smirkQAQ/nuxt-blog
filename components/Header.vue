@@ -2,7 +2,7 @@
   <header>
     <div class="flex justify-center w-full header content px-3" :class="{ active: headerStatus }">
       <div class="flex w-full items-center md:max-w-3xl lg:max-w-5xl">
-        <a-icon class="p-2 text-md text-black md:hidden" type="unordered-list" />
+        <a-icon @click="visible = true" class="p-2 text-md text-black md:hidden" type="unordered-list" />
         <span class="flex-1 text-2xl text-center md:text-left font-bold pointer" style="color: var(--blog-text-color)">小菜鸡</span>
         
         <a-input-search class="hidden md:block" placeholder="input search text" style="width: 200px" @search="onSearch" />
@@ -10,6 +10,19 @@
       </div>
     </div>
     <div class="md:header--bottom hidden md:block"></div>
+    <a-drawer
+      placement="left"
+      :closable="true"
+      :visible="visible"
+      @close="() => visible = false"
+      :bodyStyle="drawerBodyStyle"
+    >
+      <img class="w-24 h-24 inline-block rounded-full border-4 border-solid border-white" src="https://dtcos-1258203853.cos.ap-shenzhen-fsi.myqcloud.com/images%2Favatar.jpg" alt="">
+      <h2 class="mt-2 text-xl">Smirk</h2>
+      <div class="mt-2 flex flex-col justify-center items-center">
+        <div v-for="item in navTitle" :key="item.title" class="py-1 text-lg">{{ item.title }}</div>
+      </div>
+    </a-drawer>
   </header>
 </template>
 
@@ -20,6 +33,15 @@ export default {
   data() {
     return {
       searchValue: "",
+      visible: false,
+      navTitle: [
+        { title: '首页', link: '/' },
+        { title: '归档', link: '/' },
+        { title: '友情链接', link: '/' },
+        { title: '留言板', link: '/' },
+        { title: '关于', link: '/' },
+      ],
+      drawerBodyStyle: { padding: '20px 10px', textAlign: 'center', height: '100vh', overFlowY: 'auto', boxSizing: 'border-box', backgroundColor: '#3ddac5' }
     }
   },
   computed: {

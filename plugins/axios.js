@@ -15,7 +15,8 @@ export default ({ $axios, redirect, route, store }) => {
   $axios.onResponse(res => {
     return {
       code: res?.status,
-      data: res?.data
+      data: res?.data?.data,
+      msg: res?.message
     }
   })
 
