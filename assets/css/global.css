@@ -3,11 +3,6 @@
   --blog-text-color: #ffff00;
 }
 
-/* 鼠标样式 */
-.pointer {
-  cursor: pointer;
-}
-
 /* 滚动条 */
 ::-webkit-scrollbar {
   width: 10px;

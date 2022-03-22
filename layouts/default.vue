@@ -8,7 +8,7 @@
       </main>
       <Footer></Footer>
       <transition name="up_hiddent">
-        <i v-show="isToTop" class="to_top iconfont icon-rocket pointe lg:right-14" @click="backTop"></i>
+        <i v-show="isToTop" class="to_top iconfont icon-rocket cursor-pointer lg:right-14" @click="backTop"></i>
       </transition>
     </div>
   </transition>
