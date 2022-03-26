@@ -1,12 +1,14 @@
 <template>
-  <div>123</div>
+  <div>
+    link
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Archive',
+  name: 'Link',
   scrollToTop: true,
-  
+
 }
 </script>
 

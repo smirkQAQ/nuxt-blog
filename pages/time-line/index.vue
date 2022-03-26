@@ -1,12 +1,12 @@
 <template>
-  <div>123</div>
+  <div>
+    time-line
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Archive',
-  scrollToTop: true,
-  
+  name: 'TimeLine',
 }
 </script>
 

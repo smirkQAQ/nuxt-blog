@@ -1,12 +1,12 @@
 <template>
-  <div>123</div>
+  <div>
+    about
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Archive',
-  scrollToTop: true,
-  
+  name: 'About',
 }
 </script>
 

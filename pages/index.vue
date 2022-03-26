@@ -1,7 +1,6 @@
 <template>
   <div class="p-1">
-    
-    <div v-if="loading">
+    <div v-if="!list" class="opacity-80">
       <a-card class="mb-1" v-for="item in 4" :key="item" >
         <a-skeleton active />
       </a-card>
@@ -19,16 +18,23 @@ export default {
   data() {
     return {
       list: [],
-      loading: true
+      // loading: false
     }
   },
-  mounted() {
-    this.getList()
+  // 页面加载或者加载为服务端请求数据 路由为客户端请求
+  async asyncData({ $axios }) {
+    const { code, data, msg } = await $axios.get('/api/article/articleList', { params: { page: 1, pageSize: 10 }})
+    if (code === 200) {
+      return {
+        list: data.list,
+      }
+    }
+  
   },
   methods: {
     async getList() {
       const { code, data, msg } = await this.$axios.get('/api/article/articleList', { params: { page: 1, pageSize: 10 }})
-      this.loading = false
+      // this.loading = false
       if (code === 200) {
         this.list = data.list
       } else {

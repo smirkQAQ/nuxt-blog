@@ -6,7 +6,7 @@
         <TxyIcon />
         <span class="ml-1" style="line-height: 18px">COS</span>
       </div>
-      <a class="mx-1" style="line-height: 22px" href="http://beian.miit.gov.cn/">粤ICP备xxx号-1</a>
+      <a class="mx-1" style="line-height: 22px" href="http://beian.miit.gov.cn/">粤ICP备2022032047号-1</a>
       <div class="flex px-1 py-0.5 text-white rounded-md" style="background-image: linear-gradient(to bottom right, #006eff, #00c8dc, #00a3ff)">
         <img class="aliyun--tag" :src="require('@/assets/images/aliyun.png')">
         <span class="ml-1" style="line-height: 18px">阿里云</span>
